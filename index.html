@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations">
+  <meta name="keywords"
+    content="contrastive lambda repformer, lambda representation, Task Success Prediction, Open-Vocabulary Manipulation, Multi-Level Aligned Visual Representation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- added mathjax -->
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var video = document.getElementById("summaryVideo");
+    video.currentTime = 1;
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var videos = document.querySelectorAll('.fast-video');
+    videos.forEach(function(video) {
+      video.playbackRate = 8;
+    });
+  });
+</script>
+
+<!-- Hero -->
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations</h1>
+          <span class="is-size-4 has-text-weight-bold">
+            <a class="has-text-dark" href="https://www.robot-learning.org/">CoRL 2024</a><br><br></span>
+
+          <div class="publication-authors">
+
+            <div class="is-size-5">
+              <span class="author-block has-text-primary-dark">
+                Miyu Goko<sup>*</sup>,</span>
+              <span class="author-block has-text-primary-dark">
+                <a class="has-text-primary-dark" href="https://motonarikambara.github.io/">Motonari Kambara<sup>*</sup></a>,</span>
+              <span class="author-block has-text-primary-dark">
+                Daichi Saito,</span>
+              <span class="author-block has-text-primary-dark">
+                <a class="has-text-primary-dark" href="https://scholar.google.com/citations?hl=en&user=koZVTJ4AAAAJ">Seitaro Otsuki</a>,</span>
+              <span class="author-block has-text-primary-dark">
+                <a class="has-text-primary-dark" href="https://komeisugiura.jp/index_en.html">Komei Sugiura</a></span>
+            </div>
+
+            <div>
+              <span class="is-size-6 has-text-primary-dark">Keio University</span>
+              <br>
+              <span class="is-size-6">* denotes equal contribution</span>
+            </div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.00436" class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                    <!-- <i class="fas fa-lock"></i> -->
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+              <a href="https://contrastive-lambda-repformer.s3.amazonaws.com/dataset/dataset.tar.gz"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-database"></i>
+                </span>
+                <span>Dataset</span>
+              </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/keio-smilab24/contrastive-lambda-repformer" class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                    <!-- <i class="fas fa-lock"></i> -->
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+          <p>
+            We will set the links as soon as possible.
+            <br>
+            At this moment, our code and additional report are provided as supplementary materials.</b>
+            <br>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="summaryVideo" poster="" controls muted loop playsinline height="100%" style="border-radius: 15px;">
+        <source src="./static/videos/summary.mp4" type="video/mp4">
+      </video>
+        <br>
+        <br><br><br>
+        <br>
+        <figure class="image">
+          <img src="./static/images/eye-catch.png" alt="eye-catch.png" />
+        </figure>
+        <br>
+        <h2 class="subtitle has-text-centered">
+          <b>Contrastive \(\boldsymbol \lambda\)-Repformer</b> performs task success prediction based on <br> the multi-level aligned representations—<b>\(\boldsymbol \lambda\)-Representation</b>.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this study, we consider the problem of <b>predicting task success for object manipulation</b> by a robot, based on the instruction sentences and ego centric images before and after manipulation.
+              <b>Conventional approaches, including multimodal large language models, fail</b> to appropriately understand detailed characteristics of objects and subtle changes in the position of objects.
+            </p>
+            <p>
+              We propose the <b>Contrastive \(\boldsymbol \lambda\)-Repformer</b>, which predicts task success for table-top manipulation tasks by aligning images with instruction sentences.
+              Our method integrates the following three key types of features into an multi-level aligned representation: features that preserve local image information; features structured through natural language; and features aligned with natural language.
+              This allows the model to focus on the subtle changes by looking at the differences in the representation between two images. 
+            </p>
+            <p>
+              To evaluate our approach, we built a novel dataset from real-world environments.
+              The results show that our approach outperformed existing approaches including multimodal LLMs on the dataset.
+              Our best model achieved an <b>improvement of 8.66 points in accuracy compared to the representative multimodal LLM-based model</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Abstract. -->
+
+  <!-- zero-shot environment -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Zero-Shot Transfer (playback in x8)</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+        <!-- 1 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_007.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "SUCCESS"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "place a mug in front of the banana"
+            </div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_018.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "FAILURE"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="has-text-justified">
+              Instruction: "place a chips can in front of the red round can"
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_042.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "SUCCESS"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "pick the yellow bottle at the back right"
+            </div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_054.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "FAILURE"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "pick the blue spam can"
+              <br>
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_069.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "SUCCESS"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "move the purple small cup close to the light blue cup"
+            </div>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_083.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "FAILURE"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="has-text-justified">
+              Instruction: "move the apple near by the banana"
+            </div>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_108.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "SUCCESS"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "move the blue can close to the soup can"
+            </div>
+          </div>
+        </div>
+        <!-- 8 -->
+        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="card-image is-relative">
+            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
+              <source src="./static/videos/exp/episode_086.mov" type="video/mp4">
+            </video>
+          </div>
+          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
+            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
+              <b>PREDICT "FAILURE"</b>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Instruction: "move the rubik's cube near by the purple cup"
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ zero-shot environment -->
+
+  <!-- overview -->
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <p class="content has-text-justified">
+            We tackle the task of <b>predicting whether a tabletop object manipulation task was performed successfully</b>, given the instruction sentence and ego-centric images taken before and after the manipulation.
+            We define this task as Success Prediction for Object Manipulation (<b>SPOM</b>).
+          </p>
+          <br>
+          <figure class="image">
+            <img src="./static/images/eye-catch-only-samples.png" alt="." />
+          </figure>
+          <p class="content has-text-justified">
+            <b>Fig. 1:</b> Typical samples of SPOM task. The each top sentence is the given instruction for each sample. The top and bottom images depict the scene before and after the manipulation, respectively.
+          </p>
+          <div class="columns is-centered">
+            <p class="column is-four-fifths">
+              <br>
+              <br>
+              <b>To tackle the task, we propose the novel approach to create the multi-level aligned representations for images, and build the success prediction method based on them—Contrastive \(\boldsymbol \lambda\)-Repformer.</b>
+              <br>
+              <br>
+            </p>
+          </div>
+          <p class="content">
+            <ul>
+              <li>
+                <b>CORE NOVELTIES:</b>
+                <br>&nbsp;
+              </li>
+              <li class="content has-text-justified">
+                <b>1. \(\boldsymbol \lambda\)-Representation Encoder</b>
+                computes three types of latent representations of an image and integrates them into <b>\(\boldsymbol \lambda\)-Representation</b>—the multi-level aligned visual representation composed of three types of latent representations: features that capture visual characteristics such as colors and shapes (Scene Representation), features aligned with natural language (Aligned Representation), and features structured through natural language (Narrative Representation).
+              </li>
+              <li class="content has-text-justified">
+                <b>2. Contrastive \(\boldsymbol \lambda\)-Representation Decoder</b>
+                identifies the difference between the \(\lambda\)-Representation of two images. This allows the model to take into consideration the alignment between the differences in the images and the instruction sentence when performing task success prediction.
+              </li>
+            </ul>
+          </p>
+
+          <br>
+          <br>
+          <figure class="image">
+            <img src="./static/images/model_diagram.png" alt="." />
+          </figure>
+          <p class="content has-text-justified">
+            <br>
+            <b>Fig. 2:</b> Overview of Contrastive \(\lambda\)-Repformer. Given an instruction sentence and images before and after manipulation, our model outputs the predicted probability that the robot successfully performed the manipulation.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4 has-text-justified">\(\boldsymbol \lambda\)-Representation</h2>
+          <div class="columns is-centered">
+            <figure class="image column is-three-fifths">
+              <img src="./static/images/lambda-rep.png" alt="." />
+            </figure>
+          </div>
+          <div class="columns is-centered">
+            <p class="content has-text-justified column is-four-fifths">
+              <b>Fig. 3: \(\boldsymbol \lambda\)-Representation</b>—the multi-level aligned visual representation composed of three types of latent representations: features that capture visual characteristics such as colors and shapes (Scene Representation), features aligned with natural language (Aligned Representation), and features structured through natural language (Narrative Representation).
+            </p>
+          </div>
+          <h3 class="title is-5 has-text-justified">Scene Representation</h3>
+          <p class="content has-text-justified">
+            The Scene Representation \(\boldsymbol{h}_s\) is obtained by concatenating the outputs of several unimodal image encoders (e.g.: ViT, Swin Transformer, DINOv2).
+          </p>
+          <h3 class="title is-5 has-text-justified">Aligned Representation</h3>
+          <p class="content has-text-justified">
+            We get Aligned Representation \(\boldsymbol{h}_a\) using the Aligned Representation Module, which is composed of multimodal foundation models such as CLIP, SigLIP and BLIP.
+          </p>
+          <h3 class="title is-5 has-text-justified">Narrative Representation</h3>
+          <p class="content has-text-justified">
+            Narrative Representation \(\boldsymbol{h}_n\) is obtained using the Narrative Representation Module, containing MLLMs (e.g.: InstructBLIP, Gemini, GPT-4) and text embedders (e.g.: BERT, text-embedding-ada-002).
+            We designed the text prompt to focus on the colors, sizes and shapes of the target objects, how they are placed, their position within the image and relative position to other objects.
+            From the output of MLLMs, we acquire its features using text embedders. Then, they are concatenated to get \(\boldsymbol{h}_n\).
+          </p>
+          <p class="content has-text-justified">
+            Finally, we obtain the <b>\(\boldsymbol \lambda\)-Representation</b> by concatenating the three representations:
+            \[\boldsymbol{h}_{\lambda}=\left[\boldsymbol{h}_s^\mathsf{T}, \boldsymbol{h}_a^\mathsf{T}, \boldsymbol{h}_n^\mathsf{T}\right]^\mathsf{T}.\]
+          </p>
+          <h2 class="title is-4 has-text-justified">Contrastive \(\boldsymbol \lambda\)-Representation Decoder</h2>
+          <p class="content has-text-justified">
+            The differences between the images do not by themselves necessarily indicate the success of the task specified by the instructions.
+            To address this issue, we propose the Contrastive \(\lambda\)-Representation Decoder, which use cross attention based architecture to obtain the predicted probability \(P(\hat{y}=1)\), 
+            indicating the probability that the manipulator has successfully executed the task.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ overview -->
+
+  <!-- results & analysis -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <h3 class="title is-4 has-text-justified">Qualitative Results</h3>
+          <figure class="image">
+            <img src="./static/images/qualitative-rt1.png" alt="Successful cases of the proposed method from SP-RT-1" />
+          </figure>
+          <p class="content has-text-justified">
+            <br>
+            <b>Fig. 4:</b> Successful cases of the proposed method from SP-RT-1: The left and right images show the scene before and after
+            the manipulation, respectively.
+          </p>
+          <br>
+          <figure class="image">
+            <img src="./static/images/qualitative-zero-shot.png" alt="Successful cases of the proposed method from zero-shot transfer experiments" />
+          </figure>
+          <p class="content has-text-justified">
+            <br>
+            <b>Fig. 5:</b> Qualitative results of the proposed method in zero-shot transfer experiments. The left image depicts
+            the scene before the manipulation, while the right image shows it afterward. Examples (i) and (ii) are true
+            positive and true negative cases, respectively.
+          </p>
+          <br>
+
+          <h3 class="title is-4 has-text-justified">Quantitative Results</h3>
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <p class="content has-text-justified">
+                <b>Table 1:</b> Quantitative results. The best results are marked in bold.
+              </p>
+              <figure class="image">
+                <img src="./static/images/tab-quantitative.png" alt="." />
+              </figure>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ results & analysis -->
+
+  <!-- demonstration in the real world -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Demonstration in the Real-World environment</h2>
+      <!-- 1st row -->
+      <div class="columns is-centered">
+        <!-- 1 -->
+        <div class="column" style="margin: auto;">
+          <video poster="" autoplay controls muted loop playsinline height="100%" style="border-radius: 15px;">
+            <source src="./static/videos/demo/rebuttal_real-world_video_1+inst.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- 2 -->
+        <div class="column" style="margin: auto;">
+          <video poster="" autoplay controls muted loop playsinline height="100%" style="border-radius: 15px;">
+            <source src="./static/videos/demo/rebuttal_real-world_video_2+inst.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ demonstration in the real world -->
+
+
+  <!-- citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+      @inproceedings{
+        goko2024task,
+        title={{Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations}},
+        author={Miyu Goko and Motonari Kambara and Daichi Saito and Seitaro Otsuki and Komei Sugiura},
+        booktitle={8th Annual Conference on Robot Learning},
+        year={2024}
+      }
+      </code></pre>
+    </div>
+  </section>
+  <!--/ citation -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> licensed
+              under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
