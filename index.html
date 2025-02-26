@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations">
+    content="HelioSSM: Deep State-Space Models for End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images">
   <meta name="keywords"
     content="contrastive lambda repformer, lambda representation, Task Success Prediction, Open-Vocabulary Manipulation, Multi-Level Aligned Visual Representation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations</title>
+  <title>HelioSSM: Deep State-Space Models for End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images
+  </title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,6 +33,8 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/stars.css">
+  <link rel="stylesheet" href="./static/css/cosmic-table.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -45,118 +48,174 @@
 </head>
 
 <body>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var video = document.getElementById("summaryVideo");
-    video.currentTime = 1;
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    var videos = document.querySelectorAll('.fast-video');
-    videos.forEach(function(video) {
-      video.playbackRate = 8;
+  <!-- 星空の背景 -->
+  <div class="starry-background">
+    <!-- 45個の星 -->
+    <div class="star tiny white"></div>
+    <div class="star small blue"></div>
+    <div class="star medium white"></div>
+    <div class="star small yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star medium blue"></div>
+    <div class="star small white"></div>
+    <div class="star large yellow"></div>
+    <div class="star medium white"></div>
+    <div class="star small pink"></div>
+    <div class="star tiny white"></div>
+    <div class="star extra-large blue"></div>
+    <div class="star small white"></div>
+    <div class="star medium yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star small blue"></div>
+    <div class="star medium white"></div>
+    <div class="star small yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star medium blue"></div>
+    <div class="star small white"></div>
+    <div class="star large yellow"></div>
+    <div class="star medium white"></div>
+    <div class="star small pink"></div>
+    <div class="star tiny white"></div>
+    <div class="star extra-large blue"></div>
+    <div class="star small white"></div>
+    <div class="star medium yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star small blue"></div>
+    <div class="star medium white"></div>
+    <div class="star small yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star medium blue"></div>
+    <div class="star small white"></div>
+    <div class="star large yellow"></div>
+    <div class="star medium white"></div>
+    <div class="star small pink"></div>
+    <div class="star tiny white"></div>
+    <div class="star extra-large blue"></div>
+    <div class="star small white"></div>
+    <div class="star medium yellow"></div>
+    <div class="star tiny white"></div>
+    <div class="star small blue"></div>
+    <div class="star medium white"></div>
+
+    <!-- 流れ星 -->
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var video = document.getElementById("summaryVideo");
+      video.currentTime = 1;
     });
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var videos = document.querySelectorAll('.fast-video');
+      videos.forEach(function (video) {
+        video.playbackRate = 0.5;
+      });
+    });
+  </script>
 
-<!-- Hero -->
+  <!-- Hero -->
   <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-widescreen">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations</h1>
-          <span class="is-size-4 has-text-weight-bold">
-            <a class="has-text-dark" href="https://www.robot-learning.org/">CoRL 2024</a><br><br></span>
-
-          <div class="publication-authors">
-
-            <div class="is-size-5">
-              <span class="author-block has-text-primary-dark">
-                Miyu Goko<sup>*</sup>,</span>
-              <span class="author-block has-text-primary-dark">
-                <a class="has-text-primary-dark" href="https://motonarikambara.github.io/">Motonari Kambara<sup>*</sup></a>,</span>
-              <span class="author-block has-text-primary-dark">
-                Daichi Saito,</span>
-              <span class="author-block has-text-primary-dark">
-                <a class="has-text-primary-dark" href="https://scholar.google.com/citations?hl=en&user=koZVTJ4AAAAJ">Seitaro Otsuki</a>,</span>
-              <span class="author-block has-text-primary-dark">
-                <a class="has-text-primary-dark" href="https://komeisugiura.jp/index_en.html">Komei Sugiura</a></span>
-            </div>
-
-            <div>
-              <span class="is-size-6 has-text-primary-dark">Keio University</span>
-              <br>
-              <span class="is-size-6">* denotes equal contribution</span>
-            </div>
-          </div>
-
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2410.00436" class="external-link button is-normal is-rounded is-dark">
-                <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                    <!-- <i class="fas fa-lock"></i> -->
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+            <h1 class="title is-1 publication-title">HelioSSM: Deep State-Space Models for End-to-End Solar Flare
+              Prediction from Full-Disk Multi-Wavelength Images</h1>
+            <span class="is-size-4 has-text-weight-bold">
+              <a class="venue-link" href="https://www.robot-learning.org/">ICCV 2025</a><br><br></span>
 
-              <!-- Dataset Link. -->
-              <span class="link-block">
-              <a href="https://contrastive-lambda-repformer.s3.amazonaws.com/dataset/dataset.tar.gz"
-                  class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-database"></i>
-                </span>
-                <span>Dataset</span>
-              </a>
-              </span>
+            <div class="publication-authors">
+              <div class="is-size-5">
+                <span class="author-block has-text-primary-dark">
+                  Anonymous submission</span>
+              </div>
 
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/keio-smilab24/contrastive-lambda-repformer" class="external-link button is-normal is-rounded is-dark">
-                <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                    <!-- <i class="fas fa-lock"></i> -->
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
-
+              <div>
+                <br>
+                <!-- <span class="is-size-6">* denotes equal contribution</span> -->
+              </div>
             </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.00436" class="external-link button is-normal is-rounded is-dark">
+                    <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                      <!-- <i class="fas fa-lock"></i> -->
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://contrastive-lambda-repformer.s3.amazonaws.com/dataset/dataset.tar.gz"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/keio-smilab24/contrastive-lambda-repformer"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                      <!-- <i class="fas fa-lock"></i> -->
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+            <p>
+              We will set the links as soon as possible.
+              <br>
+              At this moment, our code and additional report are provided as supplementary materials.</b>
+              <br>
+              <br>
+            </p>
           </div>
-          <p>
-            We will set the links as soon as possible.
-            <br>
-            At this moment, our code and additional report are provided as supplementary materials.</b>
-            <br>
-            <br>
-          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="summaryVideo" poster="" controls muted loop playsinline height="100%" style="border-radius: 15px;">
-        <source src="./static/videos/summary.mp4" type="video/mp4">
-      </video>
-        <br>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="summaryVideo" poster="" controls muted loop playsinline height="100%" style="border-radius: 15px;">
+          <source src="./static/videos/summary.mp4" type="video/mp4">
+        </video> -->
+        <!-- <br>
         <br><br><br>
-        <br>
-        <figure class="image">
-          <img src="./static/images/eye-catch.png" alt="eye-catch.png" />
-        </figure>
-        <br>
-        <h2 class="subtitle has-text-centered">
-          <b>Contrastive \(\boldsymbol \lambda\)-Repformer</b> performs task success prediction based on <br> the multi-level aligned representations—<b>\(\boldsymbol \lambda\)-Representation</b>.
-        </h2>
+        <br> -->
+        <div class="content-container"
+          style="background-color: rgba(0, 0, 51, 0.85); padding: 20px; border-radius: 15px;">
+          <figure class="image">
+            <div style="background-color: white; padding: 15px; border-radius: 10px; display: inline-block;">
+              <img src="./static/images/eye-catch.png" alt="eye-catch.png" width="400" height="auto" />
+            </div>
+          </figure>
+          <br>
+          <h2 class="subtitle has-text-centered" style="color: #ffffff;">
+            <b>HelioSSM</b> accurately and reliably predicts solar flares by capturing long-range spatio-temporal
+            dependencies and
+            fine-grained features in multi-channel solar image series.
+          </h2>
+        </div>
       </div>
     </div>
   </section>
@@ -169,18 +228,28 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              In this study, we consider the problem of <b>predicting task success for object manipulation</b> by a robot, based on the instruction sentences and ego centric images before and after manipulation.
-              <b>Conventional approaches, including multimodal large language models, fail</b> to appropriately understand detailed characteristics of objects and subtle changes in the position of objects.
+              Accurate and reliable solar flare prediction is crucial for mitigating potential disruptions to critical
+              infrastructure, however, <b>predicting solar flares remains a significant challenge</b>.
+              <b>Existing methods</b> based on heuristic physical features often lack representation learning from solar
+              images, while end-to-end learning approaches struggle to model long-range temporal dependencies present in
+              solar
+              images.
             </p>
             <p>
-              We propose the <b>Contrastive \(\boldsymbol \lambda\)-Repformer</b>, which predicts task success for table-top manipulation tasks by aligning images with instruction sentences.
-              Our method integrates the following three key types of features into an multi-level aligned representation: features that preserve local image information; features structured through natural language; and features aligned with natural language.
-              This allows the model to focus on the subtle changes by looking at the differences in the representation between two images. 
+              In this study, we propose <b>HelioSSM</b>, which is based on multiple deep state-space models for handling
+              both
+              ten-channel solar images and long-range spatio-temporal dependencies.
+              HelioSSM also features <b>sparse masked autoencoder</b>, a novel pretraining strategy that employs a
+              two-phase
+              masking approach to preserve crucial regions such as sunspots while compressing spatial information.
             </p>
             <p>
-              To evaluate our approach, we built a novel dataset from real-world environments.
-              The results show that our approach outperformed existing approaches including multimodal LLMs on the dataset.
-              Our best model achieved an <b>improvement of 8.66 points in accuracy compared to the representative multimodal LLM-based model</b>.
+              To validate our method, we built <b>FlareBench</b>, a new public benchmark for solar flare prediction
+              covering a
+              full 11-year solar activity cycle.
+              Our method <b>outperformed baseline methods and even human expert performance</b> on standard metrics in
+              terms of
+              performance and reliability.
             </p>
           </div>
         </div>
@@ -189,365 +258,568 @@
   </section>
   <!--/ Abstract. -->
 
-  <!-- zero-shot environment -->
+  <!-- solar observation videos -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Zero-Shot Transfer (playback in x8)</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-        <!-- 1 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_007.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "SUCCESS"</b>
+      <div class="solar-grid-container">
+        <div class="section-title-container">
+          <h2 class="section-title">Multi-Wavelength Solar Observations</h2>
+          <p class="section-subtitle">Exploring the Sun's dynamic nature through different wavelengths, revealing the
+            complex interactions between plasma, magnetic fields, and solar phenomena</p>
+        </div>
+
+        <div class="solar-grid">
+          <!-- AIA 94 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0094.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 94 Å</div>
+              <div class="wavelength-description">Hot corona & solar flares</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
             </div>
           </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "place a mug in front of the banana"
+
+          <!-- AIA 131 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0131.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 131 Å</div>
+              <div class="wavelength-description">Flaring regions</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 171 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0171.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 171 Å</div>
+              <div class="wavelength-description">Quiet corona & loops</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 193 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0193.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 193 Å</div>
+              <div class="wavelength-description">Corona & hot spots</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 211 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0211.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 211 Å</div>
+              <div class="wavelength-description">Active regions</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 304 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0304.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 304 Å</div>
+              <div class="wavelength-description">Chromosphere & transition</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 335 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_0335.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 335 Å</div>
+              <div class="wavelength-description">Active regions</div>
+              <div class="wavelength-category">Extreme Ultraviolet (EUV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 1600 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_1600.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 1600 Å</div>
+              <div class="wavelength-description">Upper photosphere</div>
+              <div class="wavelength-category">Ultraviolet (UV)</div>
+            </div>
+          </div>
+
+          <!-- AIA 4500 -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/aia_4500.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">AIA 4500 Å</div>
+              <div class="wavelength-description">Photosphere</div>
+              <div class="wavelength-category">Visible Light</div>
+            </div>
+          </div>
+
+          <!-- HMI -->
+          <div class="solar-card">
+            <div class="solar-video-container">
+              <video class="solar-video" autoplay muted loop playsinline>
+                <source src="./static/videos/solar/hmi.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="solar-card-content">
+              <div class="wavelength-title">HMI Magnetogram</div>
+              <div class="wavelength-description">Solar magnetic field</div>
+              <div class="wavelength-category">High-resolution</div>
             </div>
           </div>
         </div>
-        <!-- 2 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_018.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "FAILURE"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="has-text-justified">
-              Instruction: "place a chips can in front of the red round can"
-            </div>
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_042.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "SUCCESS"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "pick the yellow bottle at the back right"
-            </div>
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_054.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "FAILURE"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "pick the blue spam can"
-              <br>
-              &nbsp;
-            </div>
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_069.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "SUCCESS"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "move the purple small cup close to the light blue cup"
-            </div>
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_083.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "FAILURE"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="has-text-justified">
-              Instruction: "move the apple near by the banana"
-            </div>
-          </div>
-        </div>
-        <!-- 7 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_108.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-success has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "SUCCESS"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "move the blue can close to the soup can"
-            </div>
-          </div>
-        </div>
-        <!-- 8 -->
-        <div class="card" style="display: flex; flex-direction: column; align-items: center;">
-          <div class="card-image is-relative">
-            <video class="fast-video" poster="" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
-              <source src="./static/videos/exp/episode_086.mov" type="video/mp4">
-            </video>
-          </div>
-          <div class="is-overlay has-text-centered" style="padding-top: 1rem; margin-bottom: 150%;">
-            <div class="is-rounded has-background-danger has-text-white is-inline-block p-1" style="width: 100%;">
-              <b>PREDICT "FAILURE"</b>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              Instruction: "move the rubik's cube near by the purple cup"
-              <br>
-            </div>
-          </div>
+
+        <div class="solar-description">
+          <p>
+            Data sources: AIA level 1 images in nine wavelengths (EUV: 94Å, 131Å, 171Å, 193Å, 211Å, 304Å, 335Å; UV:
+            1600Å; Visible: 4500Å) and high-resolution (1K) magnetograms from the HMI, obtained from JSOC.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  <!--/ zero-shot environment -->
+  <!--/ solar observation videos -->
 
-  <!-- overview -->
-  <section class="section">
-    <div class="container is-max-desktop">
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Overview</h2>
-          <p class="content has-text-justified">
-            We tackle the task of <b>predicting whether a tabletop object manipulation task was performed successfully</b>, given the instruction sentence and ego-centric images taken before and after the manipulation.
-            We define this task as Success Prediction for Object Manipulation (<b>SPOM</b>).
-          </p>
-          <br>
-          <figure class="image">
-            <img src="./static/images/eye-catch-only-samples.png" alt="." />
-          </figure>
-          <p class="content has-text-justified">
-            <b>Fig. 1:</b> Typical samples of SPOM task. The each top sentence is the given instruction for each sample. The top and bottom images depict the scene before and after the manipulation, respectively.
-          </p>
-          <div class="columns is-centered">
-            <p class="column is-four-fifths">
-              <br>
-              <br>
-              <b>To tackle the task, we propose the novel approach to create the multi-level aligned representations for images, and build the success prediction method based on them—Contrastive \(\boldsymbol \lambda\)-Repformer.</b>
-              <br>
-              <br>
+  <div class="main-content">
+    <!-- Overview section -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Overview</h2>
+            <h2 class="title is-4 has-text-justified">Problem Setting</h2>
+            <p class="content has-text-justified">
+              We tackle the challenging task of <b>predicting the class of the largest solar flare within a 24-hour
+                horizon</b> using full-disk multi-wavelength solar images. This is formulated as a multi-class
+              classification problem with significant real-world implications for space weather forecasting.
             </p>
-          </div>
-          <p class="content">
-            <ul>
-              <li>
-                <b>CORE NOVELTIES:</b>
-                <br>&nbsp;
-              </li>
-              <li class="content has-text-justified">
-                <b>1. \(\boldsymbol \lambda\)-Representation Encoder</b>
-                computes three types of latent representations of an image and integrates them into <b>\(\boldsymbol \lambda\)-Representation</b>—the multi-level aligned visual representation composed of three types of latent representations: features that capture visual characteristics such as colors and shapes (Scene Representation), features aligned with natural language (Aligned Representation), and features structured through natural language (Narrative Representation).
-              </li>
-              <li class="content has-text-justified">
-                <b>2. Contrastive \(\boldsymbol \lambda\)-Representation Decoder</b>
-                identifies the difference between the \(\lambda\)-Representation of two images. This allows the model to take into consideration the alignment between the differences in the images and the instruction sentence when performing task success prediction.
-              </li>
-            </ul>
-          </p>
-
-          <br>
-          <br>
-          <figure class="image">
-            <img src="./static/images/model_diagram.png" alt="." />
-          </figure>
-          <p class="content has-text-justified">
-            <br>
-            <b>Fig. 2:</b> Overview of Contrastive \(\lambda\)-Repformer. Given an instruction sentence and images before and after manipulation, our model outputs the predicted probability that the robot successfully performed the manipulation.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-4 has-text-justified">\(\boldsymbol \lambda\)-Representation</h2>
-          <div class="columns is-centered">
-            <figure class="image column is-three-fifths">
-              <img src="./static/images/lambda-rep.png" alt="." />
-            </figure>
-          </div>
-          <div class="columns is-centered">
-            <p class="content has-text-justified column is-four-fifths">
-              <b>Fig. 3: \(\boldsymbol \lambda\)-Representation</b>—the multi-level aligned visual representation composed of three types of latent representations: features that capture visual characteristics such as colors and shapes (Scene Representation), features aligned with natural language (Aligned Representation), and features structured through natural language (Narrative Representation).
+            <!-- 余白を減らす -->
+            <div class="cosmic-table-container" style="margin-top: 0.5rem;">
+              <div class="cosmic-table">
+                <div class="cosmic-table-header">
+                  <div class="cosmic-cell">Flare Class</div>
+                  <div class="cosmic-cell">Peak X-ray Flux (I) [W/m<sup>2</sup>]</div>
+                </div>
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell">X</div>
+                  <div class="cosmic-cell"><i>I</i> > 10<sup>-4</sup></div>
+                </div>
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell">M</div>
+                  <div class="cosmic-cell">10<sup>-5</sup>
+                    < <i>I</i> ≤ 10<sup>-4</sup>
+                  </div>
+                </div>
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell">C</div>
+                  <div class="cosmic-cell">10<sup>-6</sup>
+                    < <i>I</i> ≤ 10<sup>-5</sup>
+                  </div>
+                </div>
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell">O</div>
+                  <div class="cosmic-cell"><i>I</i> ≤ 10<sup>-6</sup></div>
+                </div>
+              </div>
+            </div>
+            <p class="content has-text-justified">
+              Correspondence between flare classes and peak X-ray flux intensities.
             </p>
-          </div>
-          <h3 class="title is-5 has-text-justified">Scene Representation</h3>
-          <p class="content has-text-justified">
-            The Scene Representation \(\boldsymbol{h}_s\) is obtained by concatenating the outputs of several unimodal image encoders (e.g.: ViT, Swin Transformer, DINOv2).
-          </p>
-          <h3 class="title is-5 has-text-justified">Aligned Representation</h3>
-          <p class="content has-text-justified">
-            We get Aligned Representation \(\boldsymbol{h}_a\) using the Aligned Representation Module, which is composed of multimodal foundation models such as CLIP, SigLIP and BLIP.
-          </p>
-          <h3 class="title is-5 has-text-justified">Narrative Representation</h3>
-          <p class="content has-text-justified">
-            Narrative Representation \(\boldsymbol{h}_n\) is obtained using the Narrative Representation Module, containing MLLMs (e.g.: InstructBLIP, Gemini, GPT-4) and text embedders (e.g.: BERT, text-embedding-ada-002).
-            We designed the text prompt to focus on the colors, sizes and shapes of the target objects, how they are placed, their position within the image and relative position to other objects.
-            From the output of MLLMs, we acquire its features using text embedders. Then, they are concatenated to get \(\boldsymbol{h}_n\).
-          </p>
-          <p class="content has-text-justified">
-            Finally, we obtain the <b>\(\boldsymbol \lambda\)-Representation</b> by concatenating the three representations:
-            \[\boldsymbol{h}_{\lambda}=\left[\boldsymbol{h}_s^\mathsf{T}, \boldsymbol{h}_a^\mathsf{T}, \boldsymbol{h}_n^\mathsf{T}\right]^\mathsf{T}.\]
-          </p>
-          <h2 class="title is-4 has-text-justified">Contrastive \(\boldsymbol \lambda\)-Representation Decoder</h2>
-          <p class="content has-text-justified">
-            The differences between the images do not by themselves necessarily indicate the success of the task specified by the instructions.
-            To address this issue, we propose the Contrastive \(\lambda\)-Representation Decoder, which use cross attention based architecture to obtain the predicted probability \(P(\hat{y}=1)\), 
-            indicating the probability that the manipulator has successfully executed the task.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ overview -->
-
-  <!-- results & analysis -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <br>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Results</h2>
-          <h3 class="title is-4 has-text-justified">Qualitative Results</h3>
-          <figure class="image">
-            <img src="./static/images/qualitative-rt1.png" alt="Successful cases of the proposed method from SP-RT-1" />
-          </figure>
-          <p class="content has-text-justified">
-            <br>
-            <b>Fig. 4:</b> Successful cases of the proposed method from SP-RT-1: The left and right images show the scene before and after
-            the manipulation, respectively.
-          </p>
-          <br>
-          <figure class="image">
-            <img src="./static/images/qualitative-zero-shot.png" alt="Successful cases of the proposed method from zero-shot transfer experiments" />
-          </figure>
-          <p class="content has-text-justified">
-            <br>
-            <b>Fig. 5:</b> Qualitative results of the proposed method in zero-shot transfer experiments. The left image depicts
-            the scene before the manipulation, while the right image shows it afterward. Examples (i) and (ii) are true
-            positive and true negative cases, respectively.
-          </p>
-          <br>
-
-          <h3 class="title is-4 has-text-justified">Quantitative Results</h3>
-          <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <p class="content has-text-justified">
-                <b>Table 1:</b> Quantitative results. The best results are marked in bold.
-              </p>
-              <figure class="image">
-                <img src="./static/images/tab-quantitative.png" alt="." />
-              </figure>
+            <div class="columns is-centered">
             </div>
           </div>
-          <br>
-          <br>
+        </div>
+
+        <!-- Model Architecture セクションの修正 - 幅を広げる -->
+        <section class="section" style="max-width: 100%; padding-left: 0; padding-right: 0;">
+          <div class="container" style="max-width: 100%; width: 100%;">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-full-width">
+                <h2 class="title is-4 has-text-justified">Model Architecture</h2>
+                <p class="content has-text-justified">
+                  We propose HelioSSM, a novel architecture extending deep state-space models for classifying the
+                  maximum
+                  solar flare class within a 24-hour horizon, utilizing HMI and multi-wavelength AIA images.
+                </p>
+
+                <!-- model 図の修正 - 説明を簡略化 -->
+                <figure class="image" style="max-width: none; overflow-x: auto; margin: 2.5rem 0;">
+                  <div
+                    style="background-color: white; padding: 15px; border-radius: 10px; text-align: center; width: 100%; max-width: 1500px; margin: 0 auto;">
+                    <img src="./static/images/model.png" alt="HelioSSM Architecture"
+                      style="width: 100%; height: auto;" />
+                  </div>
+                </figure>
+
+                <div class="content has-text-justified">
+                  <p>
+                    The novelties of our proposed method are as follows:
+                  </p>
+
+                  <div class="key-innovations">
+                    <div class="innovation-item"
+                      style="display: flex; margin-bottom: 2rem; background: linear-gradient(135deg, rgba(0,0,51,0.8), rgba(0,20,100,0.7)); border-radius: 15px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <div class="innovation-content">
+                        <h3 class="innovation-title"
+                          style="color: #ffffff; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600;">Solar
+                          Spatial Encoder (SSE)</h3>
+                        <p style="color: #e0e0e0; margin: 0; line-height: 1.6;">Comprising the Depth-wise Channel
+                          Selective Module (DCSM) and the Spatio-Temporal State-Space
+                          Module (ST-SSM). The DCSM selectively weights multi-wavelength image channels to emphasize
+                          features relevant to solar events, while the ST-SSM efficiently captures long-range
+                          spatio-temporal dependencies in the solar images.</p>
+                      </div>
+                    </div>
+
+                    <div class="innovation-item"
+                      style="display: flex; margin-bottom: 2rem; background: linear-gradient(135deg, rgba(0,0,51,0.8), rgba(0,20,100,0.7)); border-radius: 15px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <div class="innovation-content">
+                        <h3 class="innovation-title"
+                          style="color: #ffffff; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600;">
+                          Long-range Temporal SSM (LT-SSM)</h3>
+                        <p style="color: #e0e0e0; margin: 0; line-height: 1.6;">Extends deep state-space models to
+                          effectively model temporal dependencies exceeding the solar
+                          rotation period within the intermediate features obtained from the pretraining stage. This
+                          allows
+                          the LT-SSM to efficiently capture long-range relationships that are crucial for solar flare
+                          prediction.</p>
+                      </div>
+                    </div>
+
+                    <div class="innovation-item"
+                      style="display: flex; margin-bottom: 2rem; background: linear-gradient(135deg, rgba(0,0,51,0.8), rgba(0,20,100,0.7)); border-radius: 15px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                      <div class="innovation-content">
+                        <h3 class="innovation-title"
+                          style="color: #ffffff; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600;">Sparse
+                          MAE</h3>
+                        <p style="color: #e0e0e0; margin: 0; line-height: 1.6;">A pretraining strategy tailored for
+                          solar images that extends the Masked Autoencoder (MAE).
+                          Sparse MAE addresses the challenge of sparse, yet crucial, information regions in solar images
+                          (e.g., sunspots) using a novel two-phase masking approach. This ensures that these crucial
+                          regions
+                          are less likely to be completely masked during pretraining, leading to improved intermediate
+                          feature representations.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- pretraining 図の修正 - 下の余白を排除 -->
+                  <figure class="image" style="margin-bottom: 0;">
+                    <div
+                      style="background-color: white; padding: 5px; border-radius: 10px; text-align: center; width: 70%; max-width: 800px; margin: 0 auto;">
+                      <img src="./static/images/pretraining.png" alt="Sparse MAE Pretraining"
+                        style="width: 100%; height: auto; margin-bottom: 0;" />
+                    </div>
+                    <figcaption class="content has-text-justified" style="margin-top: 0.5rem; margin-bottom: 0;">
+                      (a) An example of an original image. (b) Visualization of patches with
+                      the top α% highest standard deviation highlighted, often corresponding to sunspot regions. (c)
+                      Illustration of the spatial-level masking. (d) Reconstructed image by our proposed Sparse MAE.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Quantitative Results セクション -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="content-block">
+            <h2 class="title is-4 has-text-justified">Quantitative Results</h2>
+            <p class="content has-text-justified">
+              Our method outperforms all baseline approaches across all metrics and even surpasses human expert
+              performance, demonstrating the effectiveness of our approach for solar flare prediction.
+            </p>
+
+            <!-- テーブルキャプションを上部に移動 -->
+            <p class="content has-text-justified table-caption">
+              <b>Table 1:</b> Comparison of our method with state-of-the-art approaches and human experts.
+              Higher values are better for all metrics.
+            </p>
+
+            <!-- テーブル -->
+            <div class="cosmic-table-container mega-wide no-title">
+              <div class="cosmic-table">
+                <div class="cosmic-table-header">
+                  <div class="cosmic-cell method-cell">Method</div>
+                  <div class="cosmic-cell period-cell">Test period</div>
+                  <div class="cosmic-cell metric-cell">GMGS↑</div>
+                  <div class="cosmic-cell metric-cell">BSS≥M↑</div>
+                  <div class="cosmic-cell metric-cell">TSS≥M↑</div>
+                </div>
+
+                <!-- Flare Transformer w/o PF -->
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell method-cell">
+                    Flare Transformer w/o PF <a href="#" class="citation">[35]</a>
+                  </div>
+                  <div class="cosmic-cell period-cell">2014-2017 (4 years)</div>
+                  <div class="cosmic-cell metric-cell">0.220±0.116</div>
+                  <div class="cosmic-cell metric-cell">-1.770±0.225</div>
+                  <div class="cosmic-cell metric-cell">0.198±0.371</div>
+                </div>
+
+                <!-- DeFN-R -->
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell method-cell">
+                    DeFN-R <a href="#" class="citation">[54]</a>
+                  </div>
+                  <div class="cosmic-cell period-cell">2014-2015 (2 years)</div>
+                  <div class="cosmic-cell metric-cell">0.302±0.055</div>
+                  <div class="cosmic-cell metric-cell">0.036±0.982</div>
+                  <div class="cosmic-cell metric-cell">0.279±0.162</div>
+                </div>
+
+                <!-- CNN-LSTM -->
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell method-cell">CNN-LSTM</div>
+                  <div class="cosmic-cell period-cell">2019-12-01 – 2022-11-30 (3 years)</div>
+                  <div class="cosmic-cell metric-cell">0.315±0.166</div>
+                  <div class="cosmic-cell metric-cell">0.272±0.259</div>
+                  <div class="cosmic-cell metric-cell">0.330±0.306</div>
+                </div>
+
+                <!-- DeFN -->
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell method-cell">
+                    DeFN <a href="#" class="citation">[53]</a>
+                  </div>
+                  <div class="cosmic-cell period-cell">2014-2015 (2 years)</div>
+                  <div class="cosmic-cell metric-cell">0.375±0.141</div>
+                  <div class="cosmic-cell metric-cell">0.022±0.782</div>
+                  <div class="cosmic-cell metric-cell">0.413±0.150</div>
+                </div>
+
+                <!-- Flare Transformer -->
+                <div class="cosmic-table-row">
+                  <div class="cosmic-cell method-cell">
+                    Flare Transformer <a href="#" class="citation">[35]</a>
+                  </div>
+                  <div class="cosmic-cell period-cell">2014-2017 (4 years)</div>
+                  <div class="cosmic-cell metric-cell">0.503±0.059</div>
+                  <div class="cosmic-cell metric-cell">0.082±0.974</div>
+                  <div class="cosmic-cell metric-cell">0.530±0.112</div>
+                </div>
+
+                <!-- Ours -->
+                <div class="cosmic-table-row highlight-row">
+                  <div class="cosmic-cell method-cell">Ours</div>
+                  <div class="cosmic-cell period-cell">2019-12-01 – 2022-11-30 (3 years)</div>
+                  <div class="cosmic-cell metric-cell highlight-value">0.582±0.032</div>
+                  <div class="cosmic-cell metric-cell highlight-value">0.334±0.299</div>
+                  <div class="cosmic-cell metric-cell highlight-value">0.543±0.074</div>
+                </div>
+
+                <!-- Human experts -->
+                <div class="cosmic-table-row human-row">
+                  <div class="cosmic-cell method-cell">
+                    Human experts <a href="#" class="citation">[38, 51]</a>
+                  </div>
+                  <div class="cosmic-cell period-cell">2000-2015 (16 years)</div>
+                  <div class="cosmic-cell metric-cell">0.48</div>
+                  <div class="cosmic-cell metric-cell">0.16</div>
+                  <div class="cosmic-cell metric-cell">0.50</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+  </div>
   </section>
-  <!--/ results & analysis -->
 
-  <!-- demonstration in the real world -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Demonstration in the Real-World environment</h2>
-      <!-- 1st row -->
-      <div class="columns is-centered">
-        <!-- 1 -->
-        <div class="column" style="margin: auto;">
-          <video poster="" autoplay controls muted loop playsinline height="100%" style="border-radius: 15px;">
-            <source src="./static/videos/demo/rebuttal_real-world_video_1+inst.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 2 -->
-        <div class="column" style="margin: auto;">
-          <video poster="" autoplay controls muted loop playsinline height="100%" style="border-radius: 15px;">
-            <source src="./static/videos/demo/rebuttal_real-world_video_2+inst.mp4" type="video/mp4">
-          </video>
-        </div>
+  <!-- コンテンツの後に太陽のアニメーションを配置 -->
+  <!-- From Uiverse.io by reyrojo2 -->
+  <div class="section-banner-sun">
+    <div id="star-1">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
       </div>
     </div>
-  </section>
-  <!--/ demonstration in the real world -->
 
+    <div id="star-2">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+
+    <div id="star-3">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+
+    <div id="star-4">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+
+    <div id="star-5">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+
+    <div id="star-6">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+
+    <div id="star-7">
+      <div class="curved-corner-star">
+        <div id="curved-corner-bottomright"></div>
+        <div id="curved-corner-bottomleft"></div>
+      </div>
+      <div class="curved-corner-star">
+        <div id="curved-corner-topright"></div>
+        <div id="curved-corner-topleft"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
-      @inproceedings{
-        goko2024task,
-        title={{Task Success Prediction for Open-Vocabulary Manipulation Based on Multi-Level Aligned Representations}},
-        author={Miyu Goko and Motonari Kambara and Daichi Saito and Seitaro Otsuki and Komei Sugiura},
-        booktitle={8th Annual Conference on Robot Learning},
-        year={2024}
-      }
-      </code></pre>
+      <pre><code>@article{helioSSM2025,
+    title={HelioSSM: Deep State-Space Models for End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images},
+    author={Anonymous ICCV submission},
+    year={2025},
+    note={under review}
+}</code></pre>
     </div>
   </section>
-  <!--/ citation -->
 
-  <footer class="footer">
+  <!-- footer -->
+  <footer class="footer"
+    style="background: linear-gradient(to bottom, rgba(0,0,51,0.95), rgba(0,0,51,1)); padding: 3rem 1.5rem; margin-top: 4rem;">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
-          <div class="content">
-            <p>
-              Website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> licensed
-              under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
+          <div class="content has-text-centered" style="color: rgba(255,255,255,0.7);">
+            <p style="margin-bottom: 1rem;">
+              Website template borrowed from
+              <a href="https://github.com/nerfies/nerfies.github.io"
+                style="color: #00d1b2; text-decoration: none; transition: color 0.3s ease;">
+                NeRFies
+              </a>
+            </p>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.5);">
+              Licensed under a
+              <a href="http://creativecommons.org/licenses/by-sa/4.0/"
+                style="color: #00d1b2; text-decoration: none; transition: color 0.3s ease;">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>
             </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- CSSのみでスクロール位置検出を行うためのスタイルタグ -->
+  <style>
+    /* スクロール位置に応じたクラス切り替え */
+    @media screen and (min-width: 769px) {
+
+      /* 上部スクロール時 */
+      #sensor-top:target~.solar-grid {
+        animation: none;
+        transition: all 0.5s ease;
+      }
+
+      #sensor-top:target~.solar-grid {
+        animation: none;
+        transition: all 0.5s ease;
+      }
+
+      /* 下部スクロール時 */
+      #sensor-bottom:target~.solar-grid {
+        animation: none;
+        transition: all 0.5s ease;
+      }
+
+      #sensor-bottom:target~.solar-grid {
+        animation: none;
+        transition: all 0.5s ease;
+      }
+    }
+  </style>
 
 </body>
 
