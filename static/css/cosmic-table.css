@@ -1,4 +1,3 @@
-/* 宇宙テーマのテーブルスタイル */
 .results-section {
   position: relative;
   z-index: 1;
@@ -17,7 +16,6 @@
   margin-top: 20px;
 }
 
-/* 背景の星のきらめき効果 */
 .cosmic-table-container::before {
   content: '';
   position: absolute;
@@ -41,7 +39,6 @@
   50% { opacity: 0.7; }
 }
 
-/* テーブルタイトル */
 .cosmic-table-title {
   font-size: 3rem;
   color: #ffffff;
@@ -67,7 +64,6 @@
               rgba(80, 150, 255, 0));
 }
 
-/* テーブル本体 */
 .cosmic-table {
   display: table;
   width: 100%;
@@ -79,7 +75,6 @@
   margin-top: 0;
 }
 
-/* テーブルヘッダー */
 .cosmic-table-header {
   display: table-row;
   background: linear-gradient(to right, rgba(0, 30, 100, 0.9), rgba(0, 50, 120, 0.9));
@@ -100,7 +95,6 @@
   border-bottom: 2px solid rgba(100, 180, 255, 0.3);
 }
 
-/* テーブル行 */
 .cosmic-table-row {
   display: table-row;
   transition: all 0.3s ease;
@@ -122,7 +116,6 @@
   box-shadow: -5px 0 15px rgba(100, 180, 255, 0.2);
 }
 
-/* テーブルセル */
 .cosmic-cell {
   display: table-cell;
   padding: 18px 15px;
@@ -133,7 +126,6 @@
   font-size: 1.05rem;
 }
 
-/* 方法セル */
 .method-cell {
   width: 25%;
   min-width: 220px;
@@ -144,7 +136,6 @@
   word-wrap: break-word;
 }
 
-/* 期間セル */
 .period-cell {
   width: 25%;
   min-width: 250px;
@@ -152,7 +143,6 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* 指標セル */
 .metric-cell {
   width: 16.66%;
   min-width: 150px;
@@ -165,7 +155,6 @@
   white-space: nowrap;
 }
 
-/* 引用リンク */
 .citation {
   color: rgba(100, 180, 255, 0.9);
   font-size: 0.9rem;
@@ -180,7 +169,6 @@
   text-shadow: 0 0 8px rgba(100, 180, 255, 0.8);
 }
 
-/* ハイライト行 (Ours) */
 .highlight-row {
   background: linear-gradient(to right, rgba(20, 40, 100, 0.5), rgba(30, 60, 120, 0.5)) !important;
   position: relative;
@@ -205,7 +193,6 @@
   text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
 }
 
-/* ハイライト値 */
 .highlight-value {
   font-weight: bold;
   color: rgba(120, 220, 255, 1);
@@ -227,14 +214,12 @@
   border-radius: 1px;
 }
 
-/* 人間の専門家行 */
 .human-row {
   background-color: rgba(10, 30, 70, 0.4) !important;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-/* テーブルキャプション */
 .cosmic-table-caption {
   margin-top: 20px;
   padding: 15px;
@@ -250,7 +235,6 @@
   margin: 0 auto;
 }
 
-/* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
   .ultra-wide {
     padding: 30px 40px;
@@ -288,7 +272,6 @@
   }
 }
 
-/* アニメーション効果 */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -311,21 +294,18 @@
 .cosmic-table-row:nth-child(6) { animation-delay: 0.6s; }
 .cosmic-table-row:nth-child(7) { animation-delay: 0.7s; }
 
-/* 横幅を最大化するためのスタイル */
 .full-width {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 大画面でのテーブル表示を最適化 */
 @media screen and (min-width: 1408px) {
   .full-width {
     max-width: 1344px;
   }
 }
 
-/* 横幅をさらに広げるためのスタイル */
 .is-full-width {
   width: 100%;
   max-width: 100%;
@@ -340,7 +320,6 @@
   border-radius: 30px;
 }
 
-/* 大画面でのテーブル表示をさらに最適化 */
 @media screen and (min-width: 1600px) {
   .method-cell {
     width: 28%;
@@ -364,21 +343,18 @@
   }
 }
 
-/* セクション全体の横幅を広げるためのスタイル */
 .full-width-section {
   width: 100%;
   max-width: 100%;
   padding: 3rem 1rem;
 }
 
-/* コンテナを流動的に広げる */
 .container.is-fluid {
   max-width: none;
   width: 100%;
   padding: 0 2rem;
 }
 
-/* 超広幅テーブルのさらなる調整 */
 .ultra-wide {
   max-width: 100% !important;
   width: 100%;
@@ -386,13 +362,11 @@
   padding: 40px 80px;
 }
 
-/* テーブルのセル間隔を調整 */
 .cosmic-table-header .cosmic-cell,
 .cosmic-table-row .cosmic-cell {
   padding: 20px 40px;
 }
 
-/* 大画面でのテーブル表示をさらに最適化 */
 @media screen and (min-width: 1920px) {
   .container.is-fluid {
     padding: 0 4rem;
@@ -407,51 +381,42 @@
   }
 }
 
-/* テーブルの背景効果を強化 */
 .cosmic-table-container::before {
   background-size: 300% 300%;
 }
 
-/* 数値の間隔を調整 */
 .metric-cell {
   letter-spacing: 0.5px;
 }
 
-/* タイトルなしテーブルの調整 */
 .no-title {
   padding-top: 30px;
 }
 
-/* テーブルコンテナの上部マージン調整 */
 .cosmic-table-container {
   margin-top: 20px;
 }
 
-/* テーブルヘッダーの上部マージン調整 */
 .cosmic-table {
   margin-top: 0;
 }
 
-/* テーブルヘッダーの強調 */
 .cosmic-table-header {
   border-radius: 10px 10px 0 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* テーブルキャプションの調整 */
 .cosmic-table-caption {
   margin-top: 20px;
   padding: 15px;
   border-top: 1px solid rgba(100, 180, 255, 0.2);
 }
 
-/* セクションタイトルの調整（既存のセクションタイトルがある場合） */
 .section-title {
   margin-bottom: 1.5rem;
   font-size: 2rem;
 }
 
-/* Lambda-Representation スタイルに合わせた調整 */
 .title.is-4.has-text-justified {
   margin-top: 2rem;
   margin-bottom: 1.5rem;
@@ -460,45 +425,37 @@
   color: #f0f0f0;
 }
 
-/* テーブルコンテナの調整 */
 .column.is-four-fifths .cosmic-table-container {
   margin: 2rem 0;
   width: 100%;
   max-width: 100%;
 }
 
-/* テーブルの説明文のスタイル */
 .content.has-text-justified {
   margin-top: 1.5rem;
   line-height: 1.6;
 }
 
-/* テーブルの余白調整 */
 .column.is-four-fifths .cosmic-table {
   margin-bottom: 1rem;
 }
 
-/* テーブルキャプションを削除（説明文に置き換え） */
 .cosmic-table-caption {
   display: none;
 }
 
-/* テーブルの角丸を調整 */
 .column.is-four-fifths .cosmic-table-container {
   border-radius: 15px;
 }
 
-/* テーブルヘッダーの調整 */
 .column.is-four-fifths .cosmic-table-header {
   border-radius: 8px 8px 0 0;
 }
 
-/* 強調表示の調整 */
 .column.is-four-fifths .highlight-row {
   transform: scale(1.02);
 }
 
-/* Overviewと同じ背景スタイルを適用 */
 .content-block {
   background: rgba(0, 10, 40, 0.7);
   border-radius: 15px;
@@ -509,115 +466,104 @@
   border: 1px solid rgba(100, 150, 255, 0.1);
 }
 
-/* 超広幅テーブルのさらなる調整 */
 .mega-wide {
   max-width: 100% !important;
   width: 100%;
   margin: 2rem 0;
-  padding: 30px 30px; /* パディングを調整 */
-  background: rgba(0, 5, 30, 0.5); /* 背景を少し透過 */
+  padding: 30px 30px; 
+  background: rgba(0, 5, 30, 0.5);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(100, 150, 255, 0.1);
 }
 
-/* カラム幅のさらなる調整 */
 .method-cell {
-  width: 30%; /* メソッド名のセル幅をさらに広げる (25% → 30%) */
-  min-width: 250px; /* 最小幅を増加 */
+  width: 30%;
+  min-width: 250px; 
 }
 
 .period-cell {
-  width: 22%; /* テスト期間のセル幅を調整 (25% → 22%) */
-  min-width: 220px; /* 最小幅を調整 */
+  width: 22%;
+  min-width: 220px; 
 }
 
 .metric-cell {
-  width: 16%; /* 各メトリクスのセル幅を調整 */
-  min-width: 160px; /* 最小幅を増加 */
-  padding-left: 25px !important; /* 左パディングを増やす */
-  padding-right: 25px !important; /* 右パディングを増やす */
+  width: 16%;
+  min-width: 160px;
+  padding-left: 25px !important; 
+  padding-right: 25px !important; 
 }
 
-/* テーブルセルのパディングをさらに調整 */
 .cosmic-cell {
-  padding: 20px 20px; /* パディングを増やす */
+  padding: 20px 20px; 
 }
 
 .cosmic-table-header .cosmic-cell {
-  padding: 22px 20px; /* ヘッダーセルのパディングを増やす */
+  padding: 22px 20px;
 }
 
-/* テーブル行の背景を調整 */
 .cosmic-table-row:nth-child(odd) {
-  background-color: rgba(0, 20, 60, 0.3); /* 奇数行の背景を少し透過 */
+  background-color: rgba(0, 20, 60, 0.3);
 }
 
 .cosmic-table-row:nth-child(even) {
-  background-color: rgba(0, 10, 40, 0.3); /* 偶数行の背景を少し透過 */
+  background-color: rgba(0, 10, 40, 0.3);
 }
 
-/* ハイライト行の調整 */
 .highlight-row {
   background: linear-gradient(to right, rgba(20, 40, 100, 0.4), rgba(30, 60, 120, 0.4)) !important;
   transform: scale(1.02);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* 超広画面での調整をさらに強化 */
 @media screen and (min-width: 1800px) {
   .method-cell {
-    width: 32%; /* 超広画面ではメソッド名のセル幅をさらに広げる */
-    min-width: 300px; /* 最小幅を増加 */
+    width: 32%;
+    min-width: 300px;
   }
   
   .period-cell {
-    width: 20%; /* 超広画面ではテスト期間のセル幅を調整 */
-    min-width: 250px; /* 最小幅を維持 */
+    width: 20%;
+    min-width: 250px; 
   }
   
   .metric-cell {
-    width: 16%; /* 超広画面では各メトリクスのセル幅を維持 */
-    min-width: 200px; /* 最小幅を増加 */
-    padding-left: 30px !important; /* 左パディングをさらに増やす */
-    padding-right: 30px !important; /* 右パディングをさらに増やす */
+    width: 16%;
+    min-width: 200px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
   
   .cosmic-cell {
-    padding: 22px 25px; /* パディングを増やす */
-    font-size: 1.1rem; /* フォントサイズを大きく */
+    padding: 22px 25px;
+    font-size: 1.1rem; 
   }
   
   .cosmic-table-header .cosmic-cell {
-    padding: 25px 25px; /* ヘッダーセルのパディングを増やす */
-    font-size: 1.3rem; /* フォントサイズを大きく */
+    padding: 25px 25px; 
+    font-size: 1.3rem;
   }
 }
 
-/* 全体のレイアウト調整 */
 .column.is-full-width {
-  padding: 0 1rem; /* 左右のパディングを調整 */
+  padding: 0 1rem;
 }
 
-/* テーブルの背景効果を調整 */
 .cosmic-table-container::before {
-  opacity: 0.5; /* 背景の星の透明度を下げる */
+  opacity: 0.5;
 }
 
-/* テーブルキャプションのスタイル調整 */
 .cosmic-table-caption {
-  border-top: none; /* 上部の境界線を削除 */
-  background: rgba(0, 10, 40, 0.3); /* 背景を追加 */
-  border-radius: 0 0 15px 15px; /* 下部の角を丸くする */
+  border-top: none;
+  background: rgba(0, 10, 40, 0.3);
+  border-radius: 0 0 15px 15px;
 }
 
-/* テーブルヘッダーの背景を調整 */
 .cosmic-table-header {
   background: linear-gradient(to right, rgba(0, 30, 100, 0.7), rgba(0, 50, 120, 0.7));
 }
 
-/* テーブル全体のスタイル調整 */
 .cosmic-table {
-  border-radius: 10px; /* 角を丸くする */
-  overflow: hidden; /* はみ出した部分を隠す */
+  border-radius: 10px;
+  overflow: hidden;
 } 

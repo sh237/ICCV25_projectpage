@@ -4,15 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="Deep Space Weather Model: End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images">
+    content="Deep Space Weather Model: Long-Range Solar Flare Prediction from Multi-Wavelength Images">
   <meta name="keywords"
     content="contrastive lambda repformer, lambda representation, Task Success Prediction, Open-Vocabulary Manipulation, Multi-Level Aligned Visual Representation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deep Space Weather Model: End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images
+  <title>Deep Space Weather Model: Long-Range Solar Flare Prediction from Multi-Wavelength Images
   </title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -35,6 +33,7 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="./static/css/stars.css">
   <link rel="stylesheet" href="./static/css/cosmic-table.css">
+  <link rel="stylesheet" href="static/css/shooting-stars.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -42,15 +41,12 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <!-- added mathjax -->
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 
 <body>
-  <!-- 星空の背景 -->
   <div class="starry-background">
-    <!-- 45個の星 -->
     <div class="star tiny white"></div>
     <div class="star small blue"></div>
     <div class="star medium white"></div>
@@ -124,9 +120,10 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Deep Space Weather Model: End-to-End Solar Flare Prediction from Full-Disk Multi-Wavelength Images</h1>
+            <h1 class="title is-1 publication-title">Deep Space Weather Model: Long-Range Solar Flare Prediction from
+              Multi-Wavelength Images</h1>
             <span class="is-size-4 has-text-weight-bold">
-              <a class="venue-link" href="https://www.robot-learning.org/">ICCV 2025</a><br><br></span>
+              <a class="venue-link" href="https://iccv.thecvf.com/">ICCV 2025</a><br><br></span>
 
             <div class="publication-authors">
               <div class="is-size-5">
@@ -136,7 +133,6 @@
 
               <div>
                 <br>
-                <!-- <span class="is-size-6">* denotes equal contribution</span> -->
               </div>
             </div>
 
@@ -144,10 +140,8 @@
               <div class="publication-links">
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2410.00436" class="external-link button is-normal is-rounded is-dark">
-                    <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                      <!-- <i class="fas fa-lock"></i> -->
                     </span>
                     <span>arXiv</span>
                   </a>
@@ -168,10 +162,8 @@
                 <span class="link-block">
                   <a href="https://github.com/keio-smilab24/contrastive-lambda-repformer"
                     class="external-link button is-normal is-rounded is-dark">
-                    <!-- <a href="" class="external-link button is-normal is-rounded is-light" style="background-color: #f5f5f5; color: black;"> -->
                     <span class="icon">
                       <i class="fab fa-github"></i>
-                      <!-- <i class="fas fa-lock"></i> -->
                     </span>
                     <span>Code</span>
                   </a>
@@ -195,12 +187,6 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <!-- <video id="summaryVideo" poster="" controls muted loop playsinline height="100%" style="border-radius: 15px;">
-          <source src="./static/videos/summary.mp4" type="video/mp4">
-        </video> -->
-        <!-- <br>
-        <br><br><br>
-        <br> -->
         <div class="content-container"
           style="background-color: rgba(0, 0, 51, 0.85); padding: 20px; border-radius: 15px;">
           <figure class="image">
@@ -210,7 +196,8 @@
           </figure>
           <br>
           <h2 class="subtitle has-text-centered" style="color: #ffffff;">
-            <b>Deep Space Weather Model</b> accurately and reliably predicts solar flares by capturing long-range spatio-temporal
+            <b>Deep Space Weather Model</b> accurately and reliably predicts solar flares by capturing long-range
+            spatio-temporal
             dependencies and
             fine-grained features in multi-channel solar image series.
           </h2>
@@ -220,34 +207,38 @@
   </section>
 
   <!-- Abstract. -->
-  <section class="section">
+  <section class="section abstract-section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-3 abstract-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Accurate and reliable solar flare prediction is crucial for mitigating potential disruptions to critical
-              infrastructure, however, <b>predicting solar flares remains a significant challenge</b>.
-              <b>Existing methods</b> based on heuristic physical features often lack representation learning from solar
-              images, while end-to-end learning approaches struggle to model long-range temporal dependencies present in
-              solar
-              images.
+              <span class="keyword">Accurate, reliable solar flare prediction</span> is crucial for mitigating potential
+              disruptions to critical
+              infrastructure, while predicting solar flares remains a significant challenge. Existing methods based on
+              heuristic physical features often lack <span class="keyword">representation learning</span> from solar
+              images. On the other hand,
+              end-to-end learning approaches struggle to model <span class="keyword">long-range temporal
+                dependencies</span> in solar images.
             </p>
             <p>
-              In this study, we propose <b>Deep Space Weather Model (Deep SWM)</b>, which is based on multiple deep state-space models for handling
-              both
-              ten-channel solar images and long-range spatio-temporal dependencies.
-              Deep SWM also features <b>sparse masked autoencoder</b>, a novel pretraining strategy that employs a
-              two-phase
-              masking approach to preserve crucial regions such as sunspots while compressing spatial information.
+              In this study, we propose <span class="keyword">Deep Space Weather Model (Deep SWM)</span>, which is based
+              on multiple <span class="keyword">deep state space
+                models</span> for handling both ten-channel solar images and long-range spatio-temporal dependencies.
+              Deep SWM also features a <span class="keyword">sparse masked autoencoder</span>, a novel pretraining
+              strategy that employs a <span class="keyword">two-phase
+                masking approach</span> to preserve crucial regions such as sunspots while compressing spatial
+              information.
             </p>
             <p>
-              To validate our method, we built <b>FlareBench</b>, a new public benchmark for solar flare prediction
-              covering a
-              full 11-year solar activity cycle.
-              Our method <b>outperformed baseline methods and even human expert performance</b> on standard metrics in
-              terms of
+              Furthermore, we built <span class="keyword">FlareBench</span>, a new public benchmark for solar flare
+              prediction covering a full
+              <span class="keyword">11-year solar activity cycle</span>, to validate our method.
+            </p>
+            <p>
+              Our method <span class="keyword">outperformed baseline methods</span> and even <span class="keyword">human
+                expert performance</span> on standard metrics in terms of
               performance and reliability.
             </p>
           </div>
@@ -433,7 +424,6 @@
                 horizon</b> using full-disk multi-wavelength solar images. This is formulated as a multi-class
               classification problem with significant real-world implications for space weather forecasting.
             </p>
-            <!-- 余白を減らす -->
             <div class="cosmic-table-container" style="margin-top: 0.5rem;">
               <div class="cosmic-table">
                 <div class="cosmic-table-header">
@@ -470,7 +460,6 @@
           </div>
         </div>
 
-        <!-- Model Architecture セクションの修正 - 幅を広げる -->
         <section class="section" style="max-width: 100%; padding-left: 0; padding-right: 0;">
           <div class="container" style="max-width: 100%; width: 100%;">
             <div class="columns is-centered has-text-centered">
@@ -482,7 +471,6 @@
                   solar flare class within a 24-hour horizon, utilizing HMI and multi-wavelength AIA images.
                 </p>
 
-                <!-- model 図の修正 - 説明を簡略化 -->
                 <figure class="image" style="max-width: none; overflow-x: auto; margin: 2.5rem 0;">
                   <div
                     style="background-color: white; padding: 15px; border-radius: 10px; text-align: center; width: 100%; max-width: 1500px; margin: 0 auto;">
@@ -543,7 +531,6 @@
                     </div>
                   </div>
 
-                  <!-- pretraining 図の修正 - 下の余白を排除 -->
                   <figure class="image" style="margin-bottom: 0;">
                     <div
                       style="background-color: white; padding: 5px; border-radius: 10px; text-align: center; width: 70%; max-width: 800px; margin: 0 auto;">
@@ -563,7 +550,6 @@
         </section>
       </div>
 
-      <!-- Quantitative Results セクション -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <div class="content-block">
@@ -573,13 +559,11 @@
               performance, demonstrating the effectiveness of our approach for solar flare prediction.
             </p>
 
-            <!-- テーブルキャプションを上部に移動 -->
             <p class="content has-text-justified table-caption">
               <b>Table 1:</b> Comparison of our method with state-of-the-art approaches and human experts.
               Higher values are better for all metrics.
             </p>
 
-            <!-- テーブル -->
             <div class="cosmic-table-container mega-wide no-title">
               <div class="cosmic-table">
                 <div class="cosmic-table-header">
@@ -590,7 +574,6 @@
                   <div class="cosmic-cell metric-cell">TSS≥M↑</div>
                 </div>
 
-                <!-- Flare Transformer w/o PF -->
                 <div class="cosmic-table-row">
                   <div class="cosmic-cell method-cell">
                     Flare Transformer w/o PF <a href="#" class="citation">[35]</a>
@@ -601,7 +584,6 @@
                   <div class="cosmic-cell metric-cell">0.198±0.371</div>
                 </div>
 
-                <!-- DeFN-R -->
                 <div class="cosmic-table-row">
                   <div class="cosmic-cell method-cell">
                     DeFN-R <a href="#" class="citation">[54]</a>
@@ -612,7 +594,6 @@
                   <div class="cosmic-cell metric-cell">0.279±0.162</div>
                 </div>
 
-                <!-- CNN-LSTM -->
                 <div class="cosmic-table-row">
                   <div class="cosmic-cell method-cell">CNN-LSTM</div>
                   <div class="cosmic-cell period-cell">2019-12-01 – 2022-11-30 (3 years)</div>
@@ -621,7 +602,6 @@
                   <div class="cosmic-cell metric-cell">0.330±0.306</div>
                 </div>
 
-                <!-- DeFN -->
                 <div class="cosmic-table-row">
                   <div class="cosmic-cell method-cell">
                     DeFN <a href="#" class="citation">[53]</a>
@@ -632,7 +612,6 @@
                   <div class="cosmic-cell metric-cell">0.413±0.150</div>
                 </div>
 
-                <!-- Flare Transformer -->
                 <div class="cosmic-table-row">
                   <div class="cosmic-cell method-cell">
                     Flare Transformer <a href="#" class="citation">[35]</a>
@@ -643,7 +622,6 @@
                   <div class="cosmic-cell metric-cell">0.530±0.112</div>
                 </div>
 
-                <!-- Ours -->
                 <div class="cosmic-table-row highlight-row">
                   <div class="cosmic-cell method-cell">Ours</div>
                   <div class="cosmic-cell period-cell">2019-12-01 – 2022-11-30 (3 years)</div>
@@ -652,7 +630,6 @@
                   <div class="cosmic-cell metric-cell highlight-value">0.543±0.074</div>
                 </div>
 
-                <!-- Human experts -->
                 <div class="cosmic-table-row human-row">
                   <div class="cosmic-cell method-cell">
                     Human experts <a href="#" class="citation">[38, 51]</a>
@@ -670,8 +647,17 @@
   </div>
   </section>
 
-  <!-- コンテンツの後に太陽のアニメーションを配置 -->
-  <!-- From Uiverse.io by reyrojo2 -->
+  <div class="night-sky">
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+  </div>
+
   <div class="section-banner-sun">
     <div id="star-1">
       <div class="curved-corner-star">
@@ -751,7 +737,6 @@
     </div>
   </div>
 
-  <!-- citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
@@ -759,7 +744,6 @@
     </div>
   </section>
 
-  <!-- footer -->
   <footer class="footer"
     style="background: linear-gradient(to bottom, rgba(0,0,51,0.95), rgba(0,0,51,1)); padding: 3rem 1.5rem; margin-top: 4rem;">
     <div class="container">
@@ -786,12 +770,9 @@
     </div>
   </footer>
 
-  <!-- CSSのみでスクロール位置検出を行うためのスタイルタグ -->
   <style>
-    /* スクロール位置に応じたクラス切り替え */
     @media screen and (min-width: 769px) {
 
-      /* 上部スクロール時 */
       #sensor-top:target~.solar-grid {
         animation: none;
         transition: all 0.5s ease;
@@ -802,7 +783,6 @@
         transition: all 0.5s ease;
       }
 
-      /* 下部スクロール時 */
       #sensor-bottom:target~.solar-grid {
         animation: none;
         transition: all 0.5s ease;
