@@ -640,6 +640,38 @@
                 </div>
               </div>
             </div>
+
+            <h2 class="title is-4 has-text-justified" style="margin-top: 40px;">Qualitative Results</h2>
+
+            <figure class="image" style="margin-bottom: 20px; margin-top: 30px;">
+              <div
+                style="background-color: white; padding: 15px; border-radius: 10px; text-align: center; width: 100%; margin: 0 auto;">
+                <img src="./static/images/qualitative_results.png" alt="Qualitative results for flare predictions"
+                  style="width: 100%; height: auto;" />
+              </div>
+              <figcaption class="content has-text-justified" style="margin-top: 15px;">
+                Qualitative results for flare predictions. (a) and (b) illustrate successful X-class predictions, (c)
+                illustrates a successful M-class prediction, and (d) illustrates a failed X-class prediction. For each
+                case, we present Extreme Ultraviolet images at 131 Å, 193 Å, and 304 Å from time <i>t-k</i> to <i>t</i>,
+                the ground truth (GT) label, and the predictions from the baseline and our proposed method.
+              </figcaption>
+            </figure>
+
+            <figure class="image" style="margin-top: 40px; margin-bottom: 20px;">
+              <div
+                style="background-color: white; padding: 15px; border-radius: 10px; text-align: center; width: 70%; max-width: 800px; margin: 0 auto;">
+                <img src="./static/images/qualitative_results_pretraining_supp.png" alt="Reconstruction results"
+                  style="width: 100%; height: auto;" />
+              </div>
+              <figcaption class="content has-text-justified" style="margin-top: 15px;">
+                Reconstruction results obtained from the baseline MAE (ρ=0.5) and our proposed Sparse MAE. Rows (a),
+                (b), (c), (d), (e), and (f) show 94 Å, 171 Å, 304 Å, 1600 Å, 4500 Å AIA, and HMI images, respectively,
+                captured three hours before an upcoming X-class flare. Columns (i), (ii), (iii), (iv), and (v) present
+                the original image, the baseline reconstruction, a visualization of patches with the top α% highest
+                standard deviation highlighted, the spatial-level masking of the Sparse MAE, and the reconstruction of
+                the Sparse MAE, respectively.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
